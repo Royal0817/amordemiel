@@ -1,0 +1,30 @@
+#cake-menu {
+    width: 100vw;
+    height: 150vh;
+    background-color: #ADD2C2;
+}
+
+.menu-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.menu-headers {
+    height: 3rem;
+    display: flex;
+    margin-top: -5rem;
+    justify-content: center;
+    padding: 1rem;
+    /* background-color: red; */
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+img {
+    margin-top: -5rem;
+    height: 22rem;
+}
