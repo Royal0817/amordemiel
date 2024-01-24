@@ -8,45 +8,45 @@ const CakeMenu = () => {
       <div className='menu-logo'>
         <img src={img2} alt="logo" />
       </div>
-      <section className='menu-headers'>
-      <h1>Menu</h1>
+      <section >
+        <h1>Menu</h1>
       </section>
 
       <section className='menu-items'>
         <h4>Cakes</h4>
-          <div>Tres Leches</div>
-          <div>Chocolate</div>
-          <div>Vanilla</div>
-          <div>Strawberry</div>
-          <div>flavor</div>
-          <div>flavor</div>
-          <div>flavor</div>
-          <div>flavor</div>
+          <div className='food-item'>Tres Leches</div>
+          <div className='food-item'>Chocolate</div>
+          <div className='food-item'>Vanilla</div>
+          <div className='food-item'>Strawberry</div>
+          <div className='food-item'>flavor</div>
+          <div className='food-item'>flavor</div>
+          <div className='food-item'>flavor</div>
+          <div className='food-item'>flavor</div>
 
         <h4>Cupcakes</h4>
-          <div>flavor</div>
-          <div>flavor</div>
-          <div>flavor</div>
-          <div>flavor</div>
-          <div>flavor</div>
+          <div className='food-item'>flavor</div>
+          <div className='food-item'>flavor</div>
+          <div className='food-item'>flavor</div>
+          <div className='food-item'>flavor</div>
+          <div className='food-item'>flavor</div>
 
           <h4>Cookies</h4>
-            <div>flavor</div>
-            <div>flavor</div>
-            <div>flavor</div>
-            <div>flavor</div>
-            <div>flavor</div>
-            <div>flavor</div>
-            <div>flavor</div>
+            <div className='food-item'>flavor</div>
+            <div className='food-item'>flavor</div>
+            <div className='food-item'>flavor</div>
+            <div className='food-item'>flavor</div>
+            <div className='food-item'>flavor</div>
+            <div className='food-item'>flavor</div>
+            <div className='food-item'>flavor</div>
         
         <h4>Food</h4>
-          <div>food item</div>
-          <div>food item</div>
-          <div>food item</div>
-          <div>food item</div>
-          <div>food item</div>
-          <div>food item</div>
-          <div>food item</div>
+          <div className='food-item'>food item</div>
+          <div className='food-item'>food item</div>
+          <div className='food-item'>food item</div>
+          <div className='food-item'>food item</div>
+          <div className='food-item'>food item</div>
+          <div className='food-item'>food item</div>
+          <div className='food-item'>food item</div>
 
       </section>
     </div>

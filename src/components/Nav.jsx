@@ -9,8 +9,8 @@ const Nav = () => {
               <div className='logo nav-item'>
                 <img src={logo} alt="Amor de Miel logo" />
               </div>
-              <div className='nav-item'> <Link to="/cake-menu">Cake Menu</Link> </div>
-              <div className='nav-item'> <Link to="/cake-gallery">Cake Gallery</Link> </div>
+              <div className='nav-item'> <Link to="/menu">Menu</Link> </div>
+              <div className='nav-item'> <Link to="/gallery">Gallery</Link> </div>
               <div className='nav-item'> <Link to="/about-me">About Me</Link> </div>
               <div className='nav-item'> <Link to="/contact">Contact</Link> </div>
         </nav>
