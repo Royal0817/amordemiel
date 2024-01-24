@@ -3,8 +3,11 @@ import React from 'react';
 const CakeMenu = () => {
   return (
     <div>
-      <h2>Cake Menu</h2>
-      {/* Add your cake menu components here */}
+      <h1>Menu</h1>
+      <h2>Cakes</h2>
+      <h2>Cupcakes</h2>
+      <h2>Cookkies</h2>
+      <h2>Food</h2>
     </div>
   );
 }
