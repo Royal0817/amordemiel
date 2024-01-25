@@ -1,19 +1,30 @@
-#body {
+#homepage {
     height: 100vh;
-    width: 100vw;
-    display: grid;
-    grid-template-columns: 1fr;
-    background-image: url(../images/background.png);
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
 }
 
 .page-layout {
-    margin: 1rem;
+    background-image: url(../images/background.png);
+    height: 100%;
+    width: 100%;
+    background-size: cover; 
+    background-position: center; 
+    /* margin: 1rem; */
 }
 
-.homepage-header {
+/* .homepage-header {
     height: 100vh;
     width: auto;
-    /* background-color: #AAB7AE; */
     color: white;
-  }
+  } */
+
+
+@media only screen and (max-width: 600px) {
+    .page-layout {
+        background-image: url(../images/mobile.png)
+    }
+}
   

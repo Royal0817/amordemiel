@@ -3,13 +3,13 @@ import '../styles/Homepage.css'
 
 const Homepage = () => {
   return ( 
-    <div id='body'>
+    <div id='homepage'>
         <div className="page-layout">
             <Nav />
-            <section className="homepage-header">
+            {/* <section className="homepage-header">
                 
-            </section>
-        </div>;
+            </section> */}
+        </div>
     </div>
   )
 };

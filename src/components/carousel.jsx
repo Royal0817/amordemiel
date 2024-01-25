@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-//-------------------------------!!!!!!!indicators not rendering come back to fix!!!!!!!!!!---------------------
 
 const CarouselIndicators = ({ images, activeIndex, onClick }) => (
   <div className="carousel_indicators">
@@ -24,11 +23,11 @@ const Carousel = ({ images, interval = 3000 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const nextSlide = useCallback(() => {
-    setActiveIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+    setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
   }, [images.length]);
 
   const prevSlide = useCallback(() => {
-    setActiveIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+    setActiveIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   }, [images.length]);
 
   const goToSlide = useCallback((index) => {

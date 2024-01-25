@@ -1,10 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/CakeMenu.css'
 import img2  from '../images/logo.png'
 
 const CakeMenu = () => {
   return (
     <div id='cake-menu'>
+      <div className='nav-item'>
+        <Link to="/">Homepage</Link>
+      </div>
+      <div className='nav-item'>
+        <Link to="/gallery">Gallery</Link>
+      </div>
+      
       <div className='menu-logo'>
         <img src={img2} alt="logo" />
       </div>
