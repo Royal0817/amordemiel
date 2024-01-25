@@ -25,7 +25,12 @@
     justify-items: center;
     font-size: 1.2rem;
 }
+
+h1 {
+    font-size: 3rem;
+}
 h4 {
+    text-decoration: underline;
     font-size: 2rem;
 }
 
@@ -33,4 +38,3 @@ h4 {
     margin-top: -5rem;
     height: 22rem;
 }
-
