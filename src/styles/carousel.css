@@ -1,13 +1,27 @@
 #gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: red;
+  background-color: #ADD2C2;
 }
+
 .carousel {
   position: relative;
-  width: 75%;
+  object-fit: contain;
+  border-radius: 5px;
+  height: 75vh;
+  /* width: ; */
   overflow: hidden;
 }
+
+.carousel > img {
+  height: 100%;
+  width: 100%;
+}
+
+
 .carousel__btn {
   position: absolute;
   top: 50%;
@@ -20,7 +34,9 @@
   cursor: pointer;
   z-index: 1;
   transition: smooth 0.3s;
+  opacity: 0.2;
 }
+
 .carousel__btn:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -37,5 +53,17 @@
   transition: transform 0.3s ease-in-out;
 }
 .carousel__img:hover {
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
+}
+.carousel_indicators {
+  height: 50px;
+  /* background-color: purple; */
+}
+
+.carousel_indictor {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc; 
+  border-radius: 50%;
+  cursor: pointer;
 }
