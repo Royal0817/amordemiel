@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import '../styles/carousel.css'
 
 const CarouselIndicators = ({ images, activeIndex, onClick }) => (
   <div className="carousel_indicators">

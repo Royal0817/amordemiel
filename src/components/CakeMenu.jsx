@@ -6,13 +6,13 @@ import img2  from '../images/logo.png'
 const CakeMenu = () => {
   return (
     <div id='cake-menu'>
-      <div className='nav-item'>
+      <div className='menu-nav'>
         <Link to="/">Homepage</Link>
       </div>
-      <div className='nav-item'>
+      <div className='menu-nav'>
         <Link to="/gallery">Gallery</Link>
       </div>
-      
+
       <div className='menu-logo'>
         <img src={img2} alt="logo" />
       </div>
