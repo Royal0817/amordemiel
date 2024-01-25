@@ -1,48 +1,47 @@
-// Carousel.js
+import React, { useState, useEffect } from 'react';
 
-import React, { useRef, useState } from 'react';
-import '../styles/carousel.css';
-
-const Carousel = ({ images }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const carouselRef = useRef(null);
-
+const Carousel = ({ images, interval = 2500 }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    scrollCarousel();
+    setActiveIndex((prevIndex) =>
+    prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
   };
-
+  useEffect(() => {
+    const nextSlide = () => {
+      setActiveIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    };
+  
+    const autoPlayInterval = setInterval(nextSlide, interval);
+  
+    return () => {
+      clearInterval(autoPlayInterval);
+    };
+  }, [interval, images.length]);
+  
+  
+  
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-    scrollCarousel();
+    setActiveIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
   };
-
-  const scrollCarousel = () => {
-    if (carouselRef.current) {
-      const scrollPosition = currentIndex * carouselRef.current.offsetWidth;
-      carouselRef.current.scrollLeft = scrollPosition;
-    }
-  };
-
   return (
-    <div className="scrollable-container">
-      <div ref={carouselRef} className="carousel">
-        {images.map((image, index) => (
-          <div key={index} className="carousel_slide">
-            <img src={image} alt={`Slide ${index + 1}`} />
-          </div>
-        ))}
-      </div>
-      <div className="carousel__navigation">
-        <button className="carousel__prev" onClick={prevSlide}>
-          &#10094;
-        </button>
-        <button className="carousel__next" onClick={nextSlide}>
-          &#10095;
-        </button>
-      </div>
+    <div className="carousel">
+      <button onClick={prevSlide} className="carousel__btn carousel__btn--prev">
+        &lt;
+      </button>
+      <img
+        src={images[activeIndex]}
+        alt={`Slide ${activeIndex}`}
+        className="carousel__img"
+      />
+      <button onClick={nextSlide} className="carousel__btn carousel__btn--next">
+        &gt;
+      </button>
     </div>
   );
 };
-
 export default Carousel;
