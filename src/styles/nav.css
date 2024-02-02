@@ -29,9 +29,10 @@ nav {
     /* padding: 1rem; */
 }
 
-a {  
-    color:  white;
+a {
+    color:  black;
     text-decoration: none;
+    font-weight: bold;
   }
 
 a:hover {
@@ -47,11 +48,11 @@ a:hover {
     font-size: 1.5rem;
     margin-right: 1rem;
   }
-  
+
   .mobile-nav {
     display: none; /* Hide by default on desktop */
   }
-  
+
   .nav-menu {
     display: flex;
     flex-direction: column;
@@ -63,17 +64,17 @@ a:hover {
     padding: 1rem;
     z-index: 1;
   }
-  
+
   .nav-menu a {
-    color: white;
+    color: black;
     text-decoration: none;
     padding: 0.5rem;
   }
-  
+
   .nav-menu a:hover {
     text-decoration: underline;
   }
-  
+
   /* ---------------- Media Query for Mobile Styles------------- */
   @media only screen and (max-width: 600px) {
 
@@ -81,27 +82,26 @@ a:hover {
         height: 13rem;
         margin-top: -2.5rem;
     }
-    
+
     .hamburger {
-      display: block; 
+      display: block;
     }
-  
+
     .desktop-nav {
         display: none; /* Hides desktop nav on mobile */
     }
-  
+
     .mobile-nav {
       display: flex; /* Shows mobile nav on mobile */
       align-items: center;
     }
-  
+
     .nav-item {
       padding: 1rem;
       text-align: center;
     }
-  
+
     .nav-menu {
       position: relative; /* Adjust for absolute positioning */
     }
   }
-  

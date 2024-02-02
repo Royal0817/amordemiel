@@ -1,12 +1,15 @@
 #cake-menu {
     width: 100vw;
-    height: 260vh;
+    height: auto;
     background-color: #ADD2C2;
+    padding-bottom: 4rem;
 }
 
 .menu-logo {
+    height: 60vh;
     display: flex;
     justify-content: center;
+
 }
 
 .menu-headers {
@@ -16,7 +19,16 @@
     margin-top: -5rem;
     justify-content: center;
     padding: 1rem;
-    /* background-color: red; */
+}
+
+.menu-nav {
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-item-nav {
+    padding: 1rem;
 }
 
 .menu-items {

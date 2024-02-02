@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import '../styles/carousel.css'
+import img4  from '../images/logo.png'
 
 const CarouselIndicators = ({ images, activeIndex, onClick }) => (
   <div className="carousel_indicators">
+    <img src={img4} alt="logo" />
     {images.map((_, index) => (
       <span
         key={index}
@@ -51,7 +53,7 @@ const Carousel = ({ images, interval = 3000 }) => {
       <img
         src={images[activeIndex]}
         alt={`Slide ${activeIndex}`}
-        className="carousel__img"
+        className="carousel-img"
       />
       <button onClick={nextSlide} className="carousel__btn carousel__btn--next" aria-label="Next Slide">
         &gt;

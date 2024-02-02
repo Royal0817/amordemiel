@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-// import Carousel from './carousel.jsx';
 import '../styles/Gallery.css'
 // ------------modal needs to disapear for mobile----------
 import img1 from '../images/gallery/img1.jpeg'
@@ -35,14 +34,14 @@ import img29 from '../images/gallery/img29.jpeg'
 import img30 from '../images/gallery/img30.jpeg'
 
 
-// const media = [
-//   img1,img2,img3,img4,img4,img5
-// ];
-
-const images = [ 
+const images = [
   img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,
   img11,img12,img13,img14,img15,img16,img17,img18,img19,img20,
   img21,img22,img23,img24,img25,img26,img27,img28,img29,img30
+]
+
+const media = [
+  img1,img2,img3
 ]
 
 const Gallery = () => {
@@ -59,13 +58,13 @@ const Gallery = () => {
   return (
     <div id='gallery'>
       <div className="gallery-nav-container">
-       <div className='gallery-nav-item'>
+        <div className='gallery-nav-item'>
            <Link to="/">Homepage</Link>
-       </div>
-       <div className='gallery-nav-item'>
-           <Link to="/menu">Menu</Link>
-       </div>
-    </div>      
+        </div>
+        <div className='gallery-nav-item'>
+            <Link to="/menu">Menu</Link>
+        </div>
+      </div>
 
       {/* Overlay for the lightbox */}
       {enlargedImage && (
@@ -80,8 +79,8 @@ const Gallery = () => {
         </div>
       )}
 
-      <div className="grid-container">
         {/* Grid of images */}
+      <div className="grid-container">
         {images.map((image, index) => (
           <div className="grid-item" key={index} onClick={() => openLightbox(image)}>
             <img src={image} alt={`cake display ${index + 1}`} />

@@ -4,6 +4,7 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
+  padding: .5rem;
   background-color: #ADD2C2;
 }
 
@@ -14,22 +15,25 @@
   height: 2rem;
   justify-content: right;
   padding-right: 1rem;
-  
+
 }
 
 .gallery-nav-item {
   padding: .5rem;
 }
 
+/* .carus */
 
 /* Grid container styles */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  background-color: red;
   gap: 2rem;
   padding: 1rem;
-  max-width: 90vw; 
-  margin: 0 ;
+  max-width: 90vw;
+  /* margin: 0 ; */
+  margin-top: 60rem;
 }
 
 /* Grid item styles */
@@ -44,6 +48,9 @@
   object-fit: cover;
 }
 
+.grid-item:hover {
+  cursor: pointer;
+}
 .overlay {
   position: fixed;
   top: 0;
@@ -62,8 +69,8 @@
   justify-content: center;
   /* align-content: center; */
   position: relative;
-  max-width: 32vw;
-  max-height: 70vh;
+  width: 32vw;
+  height: 70vh;
 }
 
 .enlarged-image {
@@ -80,3 +87,4 @@
   color: white;
   cursor: pointer;
 }
+

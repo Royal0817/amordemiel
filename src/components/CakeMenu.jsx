@@ -1,20 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/CakeMenu.css'
-import img2  from '../images/logo.png'
+import Carousel from './carousel'
+import test from '../images/menu-background.png'
+import test2 from '../images/test2.png'
+import test3 from '../images/test3.png'
+import test4 from '../images/test4.png'
+
+
+const media = [
+  test,test2,test3,test4
+]
 
 const CakeMenu = () => {
   return (
     <div id='cake-menu'>
-      <div className='menu-nav'>
-        <Link to="/">Homepage</Link>
-      </div>
-      <div className='menu-nav'>
-        <Link to="/gallery">Gallery</Link>
+      <div className="menu-nav">
+        <div className='menu-item-nav'>
+          <Link to="/">Homepage</Link>
+        </div>
+        <div className='menu-item-nav'>
+          <Link to="/gallery">Gallery</Link>
+        </div>
       </div>
 
-      <div className='menu-logo'>
-        <img src={img2} alt="logo" />
+      <div className='carousel-conatiner'>
+        <div className="carousel-left">
+          <Carousel images={media}/>
+        </div>
+        <div className="carousel-right">
+          Celebrate with Amor de Miel!
+        </div>
       </div>
 
       <section className='menu-items'>
@@ -26,8 +42,19 @@ const CakeMenu = () => {
           <div className='food-item'>Vanilla</div>
           <div className='food-item'>Strawberry</div>
           <div className='food-item'>Carrot Cake</div>
+          <div className='food-item'>Red velvet</div>
           <div className='food-item'>Coconut</div>
           <div className='food-item'>Lemon</div>
+
+        <h4>Fillings</h4>
+          <div className='food-item'>Strawberry mouse</div>
+          <div className='food-item'>Chocolate</div>
+          <div className='food-item'>Vanilla</div>
+          <div className='food-item'>Cream Cheese</div>
+          <div className='food-item'>Lemon curd</div>
+          <div className='food-item'>fruits vanilla(change later)</div>
+          <div className='food-item'>Roasted coconut & vanilla</div>
+          <div className='food-item'>strawberries and cream</div>
 
         <h4>Cupcakes</h4>
           <div className='food-item'>Strawberry</div>
@@ -45,7 +72,7 @@ const CakeMenu = () => {
             <div className='food-item'>Snickerdoodle</div>
             <div className='food-item'>Oatmeal Raisin</div>
             <div className='food-item'>Sugar Cookie</div>
-      
+
       </section>
     </div>
   );

@@ -10,21 +10,12 @@
     background-image: url(../images/background.png);
     height: 100%;
     width: 100%;
-    background-size: cover; 
-    background-position: center; 
-    /* margin: 1rem; */
+    background-size: cover;
+    background-position: center;
 }
-
-/* .homepage-header {
-    height: 100vh;
-    width: auto;
-    color: white;
-  } */
-
 
 @media only screen and (max-width: 600px) {
     .page-layout {
         background-image: url(../images/mobile.png)
     }
 }
-  
