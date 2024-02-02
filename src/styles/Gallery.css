@@ -9,31 +9,32 @@
 }
 
 .gallery-nav-container {
-  /* background-color: red; */
   display: flex;
   width: 100%;
-  height: 2rem;
+  height: 12rem;
   justify-content: right;
-  padding-right: 1rem;
-
+  align-items: center;
+  margin-right: 6rem;
 }
 
 .gallery-nav-item {
-  padding: .5rem;
+  padding: 1rem;
 }
 
-/* .carus */
+img.menu-logo {
+  height: 12rem;
+  margin-right: 61rem;
 
-/* Grid container styles */
+}
+
+/* --------Grid container styles---------*/
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  background-color: red;
+  background-color: orange;
   gap: 2rem;
   padding: 1rem;
   max-width: 90vw;
-  /* margin: 0 ; */
-  margin-top: 60rem;
 }
 
 /* Grid item styles */
@@ -67,7 +68,6 @@
 .enlarged-image-container {
   display: flex;
   justify-content: center;
-  /* align-content: center; */
   position: relative;
   width: 32vw;
   height: 70vh;

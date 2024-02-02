@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import logo1  from '../images/logo.png'
 import '../styles/Gallery.css'
 // ------------modal needs to disapear for mobile----------
 import img1 from '../images/gallery/img1.jpeg'
@@ -40,10 +41,6 @@ const images = [
   img21,img22,img23,img24,img25,img26,img27,img28,img29,img30
 ]
 
-const media = [
-  img1,img2,img3
-]
-
 const Gallery = () => {
   const [enlargedImage, setEnlargedImage] = useState(null);
 
@@ -58,6 +55,7 @@ const Gallery = () => {
   return (
     <div id='gallery'>
       <div className="gallery-nav-container">
+        <img className='menu-logo' src={logo1} alt="logo" />
         <div className='gallery-nav-item'>
            <Link to="/">Homepage</Link>
         </div>
