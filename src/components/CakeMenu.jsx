@@ -25,10 +25,10 @@ const CakeMenu = () => {
       </div>
 
       <div className='carousel-conatiner'>
-        <div className="carousel-left">
+        <div className="carousel-left-top">
           <Carousel images={media}/>
         </div>
-        <div className="carousel-right">
+        <div className="carousel-right-bottom">
           Celebrate with Amor de Miel!
         </div>
       </div>
@@ -46,7 +46,7 @@ const CakeMenu = () => {
           <div className='food-item'>Coconut</div>
           <div className='food-item'>Lemon</div>
 
-        <h4>Fillings</h4>
+        <h4>Cake Fillings</h4>
           <div className='food-item'>Strawberry mouse</div>
           <div className='food-item'>Chocolate</div>
           <div className='food-item'>Vanilla</div>

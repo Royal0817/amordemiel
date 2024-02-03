@@ -4,23 +4,18 @@ import '../styles/carousel.css'
 
 
 const CarouselIndicators = ({ images, activeIndex, onClick }) => (
-  <div className="carousel_indicators">
+  <div className="carousel-indicators">
 
     {images.map((_, index) => (
       <span
         key={index}
-        className={`carousel_indicator ${index === activeIndex ? 'active' : ''}`}
+        className={`carousel-indicator ${index === activeIndex ? 'active' : ''}`}
         onClick={() => onClick(index)}
       />
     ))}
   </div>
 );
 
-CarouselIndicators.propTypes = {
-  images: PropTypes.array.isRequired,
-  activeIndex: PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired,
-};
 
 const Carousel = ({ images, interval = 3000 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -46,23 +41,23 @@ const Carousel = ({ images, interval = 3000 }) => {
   }, [interval, nextSlide]);
 
   return (
-    <div className="carousel">
-      <button onClick={prevSlide} className="carousel__btn carousel__btn--prev" aria-label="Previous Slide">
+    <div className="carousel-indicators">
+      <button onClick={prevSlide} className="carousel-btn carousel-btn-prev" aria-label="Previous Slide">
         &lt;
       </button>
       <img
         src={images[activeIndex]}
         alt={`Slide ${activeIndex}`}
         className="carousel-img"
-      />
-      <button onClick={nextSlide} className="carousel__btn carousel__btn--next" aria-label="Next Slide">
+        />
+      <button onClick={nextSlide} className="carousel-btn carousel-btn-next" aria-label="Next Slide">
         &gt;
       </button>
       <CarouselIndicators
         images={images}
         activeIndex={activeIndex}
         onClick={goToSlide}
-      />
+        />
     </div>
   );
 };
@@ -70,6 +65,12 @@ const Carousel = ({ images, interval = 3000 }) => {
 Carousel.propTypes = {
   images: PropTypes.array.isRequired,
   interval: PropTypes.number,
+};
+
+CarouselIndicators.propTypes = {
+  images: PropTypes.array.isRequired,
+  activeIndex: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Carousel;
