@@ -3,6 +3,7 @@ nav {
     justify-content: space-between;
     height: 4rem;
     width: 100%;
+    /* background-color: green; */
     /* margin-top: 2rem; */
 }
 .desktop-nav {
@@ -21,7 +22,7 @@ nav {
 
 .logo > img {
     height: 27rem;
-    margin-top: -6rem;
+    margin-top: -3rem;
     width: 100%;
     /* background-color: red; */
     /* border-radius: 50%; */

@@ -88,3 +88,10 @@ img.menu-logo {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 600px) {
+
+  .enlarged-image-container {
+    width: 85%;
+    height: auto;
+  }
+}
