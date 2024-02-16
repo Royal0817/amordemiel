@@ -1,14 +1,11 @@
-import Nav from './Nav.jsx'
+import Nav from '../components/Nav'
 import '../styles/Homepage.css'
 
 const Homepage = () => {
-  return ( 
+  return (
     <div id='homepage'>
         <div className="page-layout">
             <Nav />
-            {/* <section className="homepage-header">
-                
-            </section> */}
         </div>
     </div>
   )

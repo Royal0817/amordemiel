@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/CakeMenu.css'
-import Carousel from './carousel'
+import Carousel from '../components/carousel'
 import test from '../images/menu-background.png'
 import test2 from '../images/test2.png'
 import test3 from '../images/test3.png'

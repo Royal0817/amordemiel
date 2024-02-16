@@ -1,23 +1,24 @@
 import React from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import CakeMenu from './components/CakeMenu';
-import Gallery from './components/Gallery';
-import AboutMe from './components/AboutMe';
-import Contact from './components/Contact';
-import HomePage from './components/Homepage.jsx'
+import { BrowserRouter as Router,Routes, Route, Navigate } from 'react-router-dom';
+import CakeMenu from './pages/CakeMenu.jsx';
+import Gallery from './pages/Gallery.jsx';
+import AboutMe from './pages/AboutMe';
+import Contact from './pages/Contact';
+import HomePage from './pages/Homepage.jsx'
 import './styles/App.css';
 
 function App() {
   return (
-  <BrowserRouter>
+  <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Navigate to="/homepage" />} />
+        <Route path="/homepage" element={<HomePage />} />
         <Route path="/menu" element={<CakeMenu />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/about-me" element={<AboutMe />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-  </BrowserRouter>
+  </Router>
   );
 }
 

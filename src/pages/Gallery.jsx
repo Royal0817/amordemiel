@@ -57,7 +57,7 @@ const Gallery = () => {
       <div className="gallery-nav-container">
         <img className='menu-logo' src={logo1} alt="logo" />
         <div className='gallery-nav-item'>
-           <Link to="/">Homepage</Link>
+           <Link to="/homepage">Homepage</Link>
         </div>
         <div className='gallery-nav-item'>
             <Link to="/menu">Menu</Link>
