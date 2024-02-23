@@ -55,12 +55,18 @@ const Gallery = () => {
   return (
     <div id='gallery'>
       <div className="gallery-nav-container">
-        <img className='menu-logo' src={logo1} alt="logo" />
         <div className='gallery-nav-item'>
            <Link to="/homepage">Homepage</Link>
         </div>
         <div className='gallery-nav-item'>
             <Link to="/menu">Menu</Link>
+        </div>
+        <img className='menu-logo' src={logo1} alt="logo" />
+        <div className='gallery-nav-item'>
+           <Link to="/about-me">Our Background</Link>
+        </div>
+        <div className='gallery-nav-item'>
+            <Link to="/contact">Contact Me</Link>
         </div>
       </div>
 

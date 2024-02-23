@@ -1,5 +1,6 @@
 import '../styles/Contact.css'
 import { Link } from 'react-router-dom';
+import React from 'react'
 // import Nav from './Nav.jsx'
 
 const Contact = () => {
