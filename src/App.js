@@ -9,7 +9,7 @@ import './styles/App.css';
 
 function App() {
   return (
-  <BrowserRouter basname='/homepage'>
+  <BrowserRouter basename='/homepage'>
       <Routes>
         <Route path="/" element={<Navigate to="/homepage" />} />
         <Route path="/homepage" element={<HomePage />} />
