@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes,Route, Navigate } from 'react-router-dom';
+import { Routes,Route, Navigate } from 'react-router-dom';
 import CakeMenu from './pages/CakeMenu.jsx';
 import Gallery from './pages/Gallery.jsx';
 import AboutMe from './pages/AboutMe';
@@ -9,7 +9,6 @@ import './styles/App.css';
 
 function App() {
   return (
-  <BrowserRouter basename='/homepage'>
       <Routes>
         <Route path="/" element={<Navigate to="/homepage" />} />
         <Route path="/homepage" element={<HomePage />} />
@@ -18,7 +17,6 @@ function App() {
         <Route path="/about-me" element={<AboutMe />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-  </BrowserRouter>
   );
 }
 
