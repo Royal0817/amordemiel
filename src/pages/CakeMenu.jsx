@@ -43,7 +43,7 @@ const CakeMenu = () => {
           <div className='food-item'>Strawberry</div>
           <div className='food-item'>Carrot Cake</div>
           <div className='food-item'>Red velvet</div>
-          <div className='food-item'>Coconut</div>
+          <div className='food-item'>Coconut Dream</div>
           <div className='food-item'>Lemon</div>
 
         <h4>Cake Fillings</h4>
