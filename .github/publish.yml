@@ -1,24 +1,28 @@
-name: Publish to GitHub Pages
-
 on:
-  push:
-    branches:
-      - main
-
+    push:
+      branches:
+        - main
+permissions:
+    contents: write
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+      runs-on: ubuntu-latest
+      name: Build and Push
+      steps:
+        - name: git-checkout
+          uses: actions/checkout@v3
 
-    steps:
-      - uses: actions/checkout@v3
+        - name: Install all dependencies
+          run: npm install
 
-      - name: Install dependencies
-        run: npm install
+        - name: Build
+          run: npm run build # The build command of your project
 
-      - name: Build the app
-        run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          publish_dir: ./build
+        - name: Push
+          uses: s0/git-publish-subdir-action@develop
+          env:
+            REPO: self
+            BRANCH: build # The branch name where you want to push the assets
+            FOLDER: build # The directory where your assets are generated
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
+            MESSAGE: "Build: ({sha}) {msg}" # The commit message
