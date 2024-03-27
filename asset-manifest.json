@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "https://AmordeMiel.com/homepage/static/css/main.657f8ad0.css",
-    "main.js": "https://AmordeMiel.com/homepage/static/js/main.3336578a.js",
+    "main.css": "https://AmordeMiel.com/homepage/static/css/main.23fcd765.css",
+    "main.js": "https://AmordeMiel.com/homepage/static/js/main.7997ffc5.js",
     "static/js/787.c58364ef.chunk.js": "https://AmordeMiel.com/homepage/static/js/787.c58364ef.chunk.js",
     "static/media/img12.jpeg": "https://AmordeMiel.com/homepage/static/media/img12.96925e0a03fa2bf380d1.jpeg",
     "static/media/img11.jpeg": "https://AmordeMiel.com/homepage/static/media/img11.16a2cdd0f076a19c614f.jpeg",
@@ -42,12 +42,12 @@
     "static/media/white-logo.png": "https://AmordeMiel.com/homepage/static/media/white-logo.917245d6c0f220d0f812.png",
     "static/media/logo.png": "https://AmordeMiel.com/homepage/static/media/logo.74bc74d9d54c2f862815.png",
     "index.html": "https://AmordeMiel.com/homepage/index.html",
-    "main.657f8ad0.css.map": "https://AmordeMiel.com/homepage/static/css/main.657f8ad0.css.map",
-    "main.3336578a.js.map": "https://AmordeMiel.com/homepage/static/js/main.3336578a.js.map",
+    "main.23fcd765.css.map": "https://AmordeMiel.com/homepage/static/css/main.23fcd765.css.map",
+    "main.7997ffc5.js.map": "https://AmordeMiel.com/homepage/static/js/main.7997ffc5.js.map",
     "787.c58364ef.chunk.js.map": "https://AmordeMiel.com/homepage/static/js/787.c58364ef.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.657f8ad0.css",
-    "static/js/main.3336578a.js"
+    "static/css/main.23fcd765.css",
+    "static/js/main.7997ffc5.js"
   ]
 }
