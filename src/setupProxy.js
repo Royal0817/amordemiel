@@ -1,11 +1,11 @@
-const { createProxyMiddleware } = require('http-proxy-middleware');
+// const { createProxyMiddleware } = require('http-proxy-middleware');
 
-module.exports = function (app) {
-app.use('/homepage/manifest.json', createProxyMiddleware({
-  target: 'https://amordemiel.com',
-  changeOrigin: true,
-})
-)
-};
+// module.exports = function (app) {
+// app.use('/server.js', createProxyMiddleware({
+//   target: 'https://amordemiel.com',
+//   changeOrigin: true,
+// })
+// )
+// };
 
 

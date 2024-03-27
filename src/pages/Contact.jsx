@@ -14,42 +14,51 @@ const Contact = () => {
     it's preferred that orders be finalized at least 2 weeks before the event date.
 
     <div className='menu-link'>
-      Explore our menu!
-            <Link to="/menu">Menu</Link>
+      Explore our
+            <Link to="/menu" className='menu'>Menu</Link>
           </div>
     <form action="/order_confirmation.html" method="post">
-        <label for="name">Name:</label>
+        <label htmlFor="name">Name:</label>
         <input type="text" id="name" name="name" required></input>
 
-        <label for="email">Email:</label>
+        <label htmlFor="email">Email:</label>
         <input type="email" id="email" name="email" required></input>
 
-        <label for="phone">Phone:</label>
+        <label htmlFor="phone">Phone:</label>
         <input type="tel" id="phone" name="phone" required></input>
 
-        <label for="cars">Choose your cake:</label>
-        <select name="Type of cake" id="cars" placeholder='cake flavor'>
-        <option value="volvo">red velvet</option>
+        <label htmlFor="cake">Choose your cake:</label>
+        <select name="Type of cake" id="cake" placeholder='cake flavor'>
+        <option value="volvo">Red Velvet</option>
+        <option value="volvo">Tres Leches</option>
+        <option value="volvo">Cafe w/ Tres Leches</option>
+        <option value="volvo">Stawberry</option>
         <option value="saab">chocolate</option>
         <option value="mercedes">vanilla</option>
         <option value="audi">lemon cake</option>
+        <option value="audi">Coconut Dream</option>
         </select>
 
-        <label for="cars">Choose your filling</label>
-        <select name="Type of cake" id="cars" placeholder='cake flavor'>
-        <option value="volvo">red velvet</option>
-        <option value="saab">chocolate</option>
-        <option value="mercedes">vanilla</option>
-        <option value="audi">lemon cake</option>
+        <label htmlFor="filling">Choose your filling</label>
+        <select name="Type of cake" id="filling" placeholder='cake flavor'>
+        <option value="volvo">Strawberry Mouse</option>
+        <option value="saab">Chocolate</option>
+        <option value="mercedes">Vanilla</option>
+        <option value="mercedes">Cream Cheese</option>
+        <option value="mercedes">Roasted Coconut</option>
+        <option value="audi">lemon Curd</option>
         </select>
 
-        <label for="address">Date for pickup:</label>
-        <textarea id="address" name="address" required></textarea>
+        <label htmlFor="pickup">Date for pickup:</label>
+        <input type='date' id='pickup'/>
 
-        <label for="instructions">Special Order Instructions:</label>
+        <label htmlFor="instructions">Special Order Instructions:</label>
         <textarea id="instructions" name="instructions"></textarea>
 
-        <input type="submit" value="Submit Request"></input>
+        <label htmlFor="instructions">Allergies</label>
+        <textarea id="instructions" name="instructions"></textarea>
+
+        <input type="submit" value="Submit Request" id='submit'></input>
     </form>
     </article>
   </div>

@@ -9,6 +9,7 @@ import './styles/App.css';
 
 function App() {
   return (
+    
       <Routes>
         <Route path="/" element={<Navigate to="/homepage" />} />
         <Route path="/homepage" element={<HomePage />} />
@@ -17,6 +18,7 @@ function App() {
         <Route path="/about-me" element={<AboutMe />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+
   );
 }
 

@@ -54,6 +54,7 @@ const Gallery = () => {
 
   return (
     <div id='gallery'>
+      <img className='menu-logo' src={logo1} alt="logo" />
       <div className="gallery-nav-container">
         <div className='gallery-nav-item'>
            <Link to="/homepage">Homepage</Link>
@@ -61,7 +62,6 @@ const Gallery = () => {
         <div className='gallery-nav-item'>
             <Link to="/menu">Menu</Link>
         </div>
-        <img className='menu-logo' src={logo1} alt="logo" />
         <div className='gallery-nav-item'>
            <Link to="/about-me">Our Background</Link>
         </div>

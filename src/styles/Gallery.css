@@ -14,15 +14,15 @@
   height: 16rem;
   justify-content: center;
   align-items: center;
-  margin-right: 6rem;
 }
 
 .gallery-nav-item {
+  margin-top: -4rem;
   padding: 1rem;
 }
 
 img.menu-logo {
-  height: 14rem;
+  height: 16rem;
   /* margin-right: 61rem; */
 
 }
@@ -93,5 +93,28 @@ img.menu-logo {
   .enlarged-image-container {
     width: 85%;
     height: auto;
+  }
+
+  .gallery-nav-container {
+    height: 14rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gallery-nav-item {
+    padding: .5rem;
+  }
+
+  .grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  img.menu-logo {
+    height: 14rem;
+    /* margin-top: -2rem; */
+    /* margin-right: 61rem; */
+
   }
 }

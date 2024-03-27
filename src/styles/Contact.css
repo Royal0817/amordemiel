@@ -8,8 +8,11 @@
 }
 
 article.info {
+    background-color: #ffe8d6;
+    border-radius: 1rem;
+    padding: 2rem;
     margin: auto;
-    height: 60vh;
+    height: 75vh;
     width: 65vw;
 }
 
@@ -21,6 +24,19 @@ form {
 .menu-link {
     display: flex;
     justify-content: center;
+}
 
+#filling, #cake, #name, #email, #phone, {
+    height: 1.5rem;
+    margin: .5rem;
+}
 
+#submit {
+    height: 2rem;
+    margin-top: 3rem;
+}
+
+.menu {
+    margin-left: .2rem;
+    text-decoration: underline;
 }
