@@ -16,7 +16,7 @@
 
 // // Wildcard route to serve index.html for any unmatched routes
 // app.get('/*', function (req, res) {
-//   res.sendFile(path.join(__dirname, '/build/static', 'index.html'));
+//   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 // });
 
 // const PORT = process.env.PORT || 3000;

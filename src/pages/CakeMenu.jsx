@@ -22,6 +22,9 @@ const CakeMenu = () => {
         <div className='menu-item-nav'>
           <Link to="/gallery">Gallery</Link>
         </div>
+        <div className='menu-item-nav'>
+          <Link to="/contact">Order</Link>
+        </div>
       </div>
 
       <div className='carousel-conatiner'>
