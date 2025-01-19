@@ -1,40 +1,39 @@
 nav {
-    display: flex;
-    justify-content: space-between;
-    height: 4rem;
-    width: 100%;
-    /* background-color: green; */
-    /* margin-top: 2rem; */
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  width: 100%;
 }
+
 .desktop-nav {
-    display: flex;
-    margin: 1rem;
+  display: flex;
+  margin: 1rem;
 }
 
 .nav-item {
-    text-decoration: none;
-    padding: 1rem;
+  text-decoration: none;
+  padding: 1rem;
 }
 
 .nav-item:first-child {
-    margin-right: auto;
+  margin-right: auto;
 }
-
+.bakery{
+  margin-top: -8rem;
+}
 .logo > img {
-    height: 27rem;
-    margin-top: -3rem;
-    width: 100%;
-    /* background-color: red; */
-    /* border-radius: 50%; */
-    /* margin-top: 4rem; */
-    /* padding: 1rem; */
+  height: 27rem;
+  margin-top: 0rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 a {
-    color:  black;
-    text-decoration: none;
-    font-weight: bold;
-  }
+  color:  black;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 a:hover {
     text-decoration: underline;
@@ -44,65 +43,74 @@ a:hover {
 }
 
 .hamburger {
-    display: none; /* Hide by default on desktop */
-    cursor: pointer;
-    font-size: 1.5rem;
-    margin-right: 1rem;
+  display: none; /* Hide by default on desktop */
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.mobile-nav {
+  display: none; /* Hide by default on desktop */
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 4rem; /* Height of your desktop nav */
+  right: 0;
+  background-color: #333; /* Adjust as needed */
+  width: 100%;
+  padding: 1rem;
+  z-index: 1;
+}
+
+.nav-menu a {
+  color: black;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.nav-menu a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------- Media Query for Mobile Styles------------- */
+@media only screen and (max-width: 600px) {
+
+  .logo > img {
+      height: 13rem;
+      margin-top: -12.5rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .desktop-nav {
+      display: none; /* Hides desktop nav on mobile */
   }
 
   .mobile-nav {
-    display: none; /* Hide by default on desktop */
+    display: flex; /* Shows mobile nav on mobile */
+    align-items: center;
+  }
+  .bakery {
+    margin-top: -3rem;
+  }
+
+  .nav-item {
+    padding: 1rem;
+    text-align: center;
   }
 
   .nav-menu {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 4rem; /* Height of your desktop nav */
-    right: 0;
-    background-color: #333; /* Adjust as needed */
-    width: 100%;
-    padding: 1rem;
-    z-index: 1;
+    position: relative; /* Adjust for absolute positioning */
   }
 
-  .nav-menu a {
-    color: black;
-    text-decoration: none;
-    padding: 0.5rem;
+  .order-button {
+    color: white;
+    font-size: 2rem;
+    bottom: 0;
   }
-
-  .nav-menu a:hover {
-    text-decoration: underline;
-  }
-
-  /* ---------------- Media Query for Mobile Styles------------- */
-  @media only screen and (max-width: 600px) {
-
-    .logo > img {
-        height: 13rem;
-        margin-top: -2.5rem;
-    }
-
-    .hamburger {
-      display: block;
-    }
-
-    .desktop-nav {
-        display: none; /* Hides desktop nav on mobile */
-    }
-
-    .mobile-nav {
-      display: flex; /* Shows mobile nav on mobile */
-      align-items: center;
-    }
-
-    .nav-item {
-      padding: 1rem;
-      text-align: center;
-    }
-
-    .nav-menu {
-      position: relative; /* Adjust for absolute positioning */
-    }
-  }
+}

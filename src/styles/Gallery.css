@@ -31,7 +31,7 @@ img.menu-logo {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  background-color: #d4c685;
+  /* background-color: #d4c685; */
   gap: 2rem;
   padding: 1rem;
   max-width: 90vw;

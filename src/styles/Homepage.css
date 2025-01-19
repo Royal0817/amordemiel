@@ -1,21 +1,112 @@
 #homepage {
-    height: 100vh;
     max-width: 100%;
-    display: flex;
+    display: center;
     flex-direction: column;
     overflow-x: hidden;
 }
+/* App.css */
 
-.page-layout {
-    background-image: url(../images/background.png);
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
 }
 
-@media only screen and (max-width: 600px) {
-    .page-layout {
-        background-image: url(../images/mobile.png)
-    }
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fcc7b0;
+    color: white;
+}
+
+.logo {
+    margin: 0;
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navLink {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navLink:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+}
+
+.heroContent {
+    text-align: center;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #FFC107;
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.cardsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cardImage {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footerLink {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+.footerLink:hover {
+    text-decoration: underline;
 }
