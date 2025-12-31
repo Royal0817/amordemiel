@@ -4,12 +4,12 @@ import '../styles/carousel.css'
 
 
 const CarouselIndicators = ({ images, activeIndex, onClick }) => (
-  <div className="carousel-indicators">
+  <div className="menu-carousel-indicators">
 
     {images.map((_, index) => (
       <span
         key={index}
-        className={`carousel-indicator ${index === activeIndex ? 'active' : ''}`}
+        className={`menu-carousel-indicator ${index === activeIndex ? 'active' : ''}`}
         onClick={() => onClick(index)}
       />
     ))}
@@ -41,7 +41,7 @@ const Carousel = ({ images, interval = 3000 }) => {
   }, [interval, nextSlide]);
 
   return (
-    <div className="carousel-indicators">
+    <div className="menu-carousel">
       <button onClick={prevSlide} className="carousel-btn carousel-btn-prev" aria-label="Previous Slide">
         &lt;
       </button>

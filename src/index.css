@@ -1,9 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;500&family=Roboto:wght@300;500&display=swap');
+
+:root {
+  --cream: #fdf8f4;
+  --blush: #f6e4dc;
+  --petal: #f0d4cf;
+  --rose: #c77a71;
+  --rose-deep: #8c4a43;
+  --cocoa: #3f2a28;
+  --text-body: #3a2b2a;
+}
 
 body {
   margin: 0;
-  background-color: #a9c6c2;
-  font-family: 'Cormorant SC','Roboto',  serif, sans-serif;
+  background: var(--cream);
+  font-family: 'Cormorant SC','Roboto', serif, sans-serif;
+  color: var(--text-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  overflow-x: hidden;
 }

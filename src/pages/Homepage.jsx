@@ -1,81 +1,83 @@
-import Nav from '../components/Nav'
-import React, { useState, useEffect } from 'react';
-import '../styles/Homepage.css'
-import imgDesktop from '../images/logo.png'
-import imgMobile from '../images/white-logo.png'
-// import Carousel from ''
+import React, { useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import '../styles/Homepage.css';
+import Hcarousel from '../components/HCarousel';
+import { useGallery } from '../context/GalleryContext.jsx';
+import gallerySeed from '../data/gallerySeed';
 
 const Homepage = () => {
-  const [logoSrc, setLogoSrc] = useState(imgDesktop);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 600) {
-        setLogoSrc(imgDesktop);
-      } else {
-        setLogoSrc(imgMobile);
-      }
-    };
-
-    // Initial setup
-    handleResize();
-
-    // Event listener for window resize
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const { galleryItems } = useGallery();
+  const heroImages = useMemo(() => {
+    const valid = (galleryItems || []).filter((item) => item && item.src);
+    const source = valid.length ? valid : gallerySeed;
+    return source.map((item) => ({ src: item.src, alt: item.alt }));
+  }, [galleryItems]);
 
   return (
     <div id='homepage'>
-          <div>
-            <header className="header">
-              <Nav />
-              {/* <div className='logo'>
-                <img src={logoSrc} alt="logo" />
-              </div> */}
-            </header>
+      <section className="hero-grid">
+        <div className="hero-copy">
+          <p className='eyebrow'>Boutique Cake Studio</p>
+          <h1>Celebrate every chapter with handcrafted sweetness.</h1>
+          <p className='lede'>From intimate gatherings to grand weddings, Amor de Miel layers flavor, artistry, and a touch of magic into every bite.</p>
 
-            <section className="hero">
-              <div className="heroContent">
-                <div className='logo'>
-               <img src={logoSrc} alt="logo" />
-                <p className='bakery'>Bakery</p>
-                <button className="button">Get Started</button>
-              </div>
-              </div>
-            </section>
-
-            <section className="content">
-              <h2>Our Features</h2>
-
-              <div className="cardsContainer">
-                  <div className="card">
-                    <img src="https://via.placeholder.com/300x200" alt="Feature 1" className="cardImage" />
-                    <h3>Feature 1</h3>
-                    <p>Short description of feature 1.</p>
-                  </div>
-                  <div className="card">
-                    <img src="https://via.placeholder.com/300x200" alt="Feature 2" className="cardImage" />
-                    <h3>Feature 2</h3>
-                    <p>Short description of feature 2.</p>
-                  </div>
-                  <div className="card">
-                    <img src="https://via.placeholder.com/300x200" alt="Feature 3" className="cardImage" />
-                    <h3>Feature 3</h3>
-                    <p>Short description of feature 3.</p>
-                  </div>
-              </div>
-            </section>
-
-            <footer className="footer">
-              <p>&copy; 2025 Amor de Miel. All rights reserved. </p>
-            </footer>
+          <div className='cta-group'>
+            <Link className='cta-primary' to='/contact'>
+              Start Inquiry
+            </Link>
+            <Link className='cta-secondary' to='/gallery'>View Gallery</Link>
+          </div>
         </div>
 
-      </div>
-  )
-}; export default Homepage;
+        <div className='hero-media'>
+          <div className='carousel-shell'>
+            <Hcarousel interval={4000} images={heroImages} />
+          </div>
+          <div className='floating-card'>
+            <p className='floating-title'>Signature pairings</p>
+            <ul>
+              <li>Honey tres leches &amp; berries</li>
+              <li>Lavender vanilla bean</li>
+              <li>Dark cacao &amp; espresso</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className='features'>
+        <p className='section-eyebrow'>What we create</p>
+        <h2 className='section-title'>Fluid designs made for your moment</h2>
+
+        <div className='feature-grid'>
+          <article className='feature-card'>
+            <h3>Custom cakes</h3>
+            <p>Layered works of art with sculpted buttercream, sugar florals, and flavor profiles tailored to your story.</p>
+          </article>
+          <article className='feature-card'>
+            <h3>Dessert tables</h3>
+            <p>Curated spreads featuring mini cakes, macarons, and seasonal bites that keep guests mesmerized.</p>
+          </article>
+          <article className='feature-card'>
+            <h3>Celebration boxes</h3>
+            <p>Limited-run pastry boxes for gifting or indulging—featuring rotating flavors, edible blooms, and keepsake menus.</p>
+          </article>
+        </div>
+      </section>
+
+      <section className='ribbon'>
+        <div className='ribbon-card'>
+          <p>Ready to dream up your centerpiece?</p>
+          <Link className='cta-primary light' to='/contact'>
+            Book a tasting
+          </Link>
+        </div>
+      </section>
+
+      <footer className="footer">
+        <p>&copy; 2025 Amor de Miel. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+};
+
+export default Homepage;

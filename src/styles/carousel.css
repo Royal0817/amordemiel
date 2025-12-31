@@ -1,12 +1,15 @@
 
-.carousel > img {
+.menu-carousel > img {
   max-height: 100%;
   max-width: 100%;
 }
-.carousel-conatiner {
-  display: flex;
+
+.menu-carousel {
+  position: relative;
+  display: block;
   width: 100%;
   max-height: 62vh;
+  overflow: hidden;
 }
 
 .carousel-left-top {
@@ -22,12 +25,27 @@
 
 /* ---------carousel attributes---------------- */
 
-.carousel-indicators {
-  position: relative;
-  object-fit: contain;
-  overflow: hidden;
-  max-height: 100%;
-  max-width: 100%;
+.menu-carousel-indicators {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.menu-carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.menu-carousel-indicator.active {
+  background: #fff;
+  transform: scale(1.1);
 }
 
 
@@ -69,7 +87,7 @@
 
 /* ------------------------for small screens------------------------ */
 @media only screen and (max-width: 600px) {
-  .carousel-conatiner {
+  .menu-carousel {
     display: flex;
     flex-direction: column;
     width: 100%;

@@ -1,42 +1,301 @@
-.contact-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    width: 100vw;
-    height: 100vh;
+.contact-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(246, 228, 220, 0.7), transparent 45%),
+              linear-gradient(180deg, var(--cream) 0%, var(--blush) 55%, var(--petal) 100%);
+  padding: 5rem 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  overflow-x: hidden;
 }
 
-article.info {
-    background-color: #ffe8d6;
-    border-radius: 1rem;
-    padding: 2rem;
-    margin: auto;
-    height: 85vh;
-    width: 65vw;
+.contact-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 4rem;
+  align-items: center;
+  justify-items: stretch;
+}
+
+.contact-hero-copy {
+  max-width: 640px;
+}
+
+.contact-hero-copy h1 {
+  font-size: clamp(2.3rem, 4vw, 3.5rem);
+  color: var(--cocoa);
+  line-height: 1.15;
+  margin: 0.7rem 0 1rem;
+}
+
+.contact-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.text-link {
+  color: var(--rose-deep);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.response-stats {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.response-stats li {
+  color: rgba(51, 23, 27, 0.8);
+  letter-spacing: 0.05em;
+}
+
+.response-stats strong {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--rose-deep);
+}
+
+.contact-hero-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 0 25px 60px rgba(40, 5, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  width: 100%;
+  max-width: 420px;
+  justify-self: end;
+  transform: translateY(12px);
+}
+
+.contact-hero-card h3 {
+  margin: 0 0 0.5rem;
+  color: var(--rose-deep);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.contact-hero-card p {
+  margin: 0.3rem 0;
+  color: rgba(50, 25, 30, 0.85);
+  line-height: 1.5;
+}
+
+.card-note {
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.contact-form-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-section-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--rose-deep);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: left;
+}
+
+.form-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.form-tab {
+  border: 1px solid rgba(120, 72, 86, 0.3);
+  border-radius: 999px;
+  padding: 0.65rem 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--cocoa);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.form-tab:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(74, 31, 37, 0.15);
+}
+
+.form-tab.active {
+  background: linear-gradient(120deg, rgba(249, 216, 209, 0.95), rgba(244, 185, 197, 0.95));
+  border-color: rgba(215, 120, 140, 0.7);
+  color: var(--rose-deep);
+  box-shadow: 0 12px 24px rgba(210, 105, 130, 0.2);
+}
+
+.form-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 32px;
+  padding: 2.5rem;
+  box-shadow: 0 25px 70px rgba(44, 10, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  width: min(980px, 100%);
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.form-card h2 {
+  margin: 0 0 0.5rem;
+  color: var(--cocoa);
+}
+
+.form-subhead {
+  margin: 0 0 2rem;
+  color: rgba(51, 23, 27, 0.75);
 }
 
 form {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+}
+
+.form-grid.two-col {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.form-grid.three-col {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(51, 23, 27, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+input,
+select,
+textarea {
+  border-radius: 14px;
+  border: 1px solid rgba(131, 76, 88, 0.2);
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.03);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.checkbox-field p {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+  color: rgba(51, 23, 27, 0.9);
+}
+
+.checkbox-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  align-items: center;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.checkbox-grid label {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.45rem;
+  text-transform: none;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.checkbox-grid input[type='checkbox'] {
+  margin: 0;
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.textarea-label {
+  gap: 0.6rem;
+}
+
+.submit-btn {
+  border: none;
+  margin-top: 0.5rem;
+  align-self: flex-start;
+}
+
+@media (max-width: 900px) {
+  .contact-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-hero-card {
+    justify-self: center;
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-page {
+    padding-top: 4rem;
+  }
+
+  .contact-hero-actions {
     flex-direction: column;
-}
+    align-items: stretch;
+  }
 
-.menu-link {
-    display: flex;
-    justify-content: center;
-}
+  .response-stats {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-#filling, #cake, #name, #email, #phone, {
-    height: 1.5rem;
-    margin: .5rem;
-}
+  .form-card {
+    padding: 1.75rem;
+  }
 
-#submit {
-    height: 2rem;
-    margin-top: 3rem;
-}
+  .form-grid.two-col,
+  .form-grid.three-col {
+    grid-template-columns: 1fr;
+  }
 
-.menu {
-    margin-left: .2rem;
-    text-decoration: underline;
+  .checkbox-grid {
+    flex-direction: column;
+  }
+
+  .submit-btn {
+    width: 100%;
+    text-align: center;
+  }
 }

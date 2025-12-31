@@ -1,81 +1,107 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/CakeMenu.css'
-import Carousel from '../components/carousel'
-import test from '../images/menu-background.png'
-import test2 from '../images/test2.png'
-import test3 from '../images/test3.png'
-import test4 from '../images/test4.png'
+import '../styles/CakeMenu.css';
+import Carousel from '../components/carousel';
+import test from '../images/menu-background.png';
+import test2 from '../images/test2.png';
+import test3 from '../images/test3.png';
+import test4 from '../images/test4.png';
 
+const media = [test, test2, test3, test4];
 
-const media = [
-  test,test2,test3,test4
-]
+const menuSections = [
+  {
+    title: 'Signature Cakes',
+    description: 'Three-layer showpieces finished with buttercream textures, sugar florals, and metallic accents.',
+    items: [
+      'Tres Leches',
+      'Cafe & Tres Leches',
+      'Chocolate',
+      'Vanilla Bean',
+      'Strawberry Cream',
+      'Carrot Spice',
+      'Red Velvet',
+      'Coconut Dream',
+      'Honey Citrus',
+    ],
+  },
+  {
+    title: 'Fillings & Mousses',
+    description: 'Layer flavors to match your palette. Mix + match for tastings or tiered cakes.',
+    items: [
+      'Strawberry Mousse',
+      'Chocolate Ganache',
+      'Vanilla Bean Crème',
+      'Cream Cheese',
+      'Lemon Curd',
+      'Roasted Coconut & Vanilla',
+      'Berries & Chantilly',
+      'Salted Dulce de Leche',
+    ],
+  },
+  {
+    title: 'Cupcakes & Minis',
+    description: 'Perfect for showers, dessert tables, or favors. Minimum order of two dozen.',
+    items: [
+      'Strawberry',
+      'Red Velvet',
+      'Chocolate Fudge',
+      'Vanilla Confetti',
+      'Meyer Lemon',
+      'Oreo Crunch',
+      'Tres Leches',
+      'Cafe Mocha',
+    ],
+  },
+  {
+    title: 'Cookies & Treats',
+    description: 'Hand-piped royal icing or soft-centered classics available individually wrapped.',
+    items: [
+      'Chocolate Chip with Sea Salt',
+      'Snickerdoodle',
+      'Oatmeal Raisin',
+      'Sugar Cookie Florals',
+      'Painted Shortbread Tiles',
+    ],
+  },
+];
 
 const CakeMenu = () => {
   return (
     <div id='cake-menu'>
-      <div className="menu-nav">
-        <div className='menu-item-nav'>
-          <Link to="/">Homepage</Link>
+      <section className='menu-hero'>
+        <div className='menu-hero-media'>
+          <Carousel images={media} />
+          <span className='menu-hero-label'>Seasonal tastings available quarterly</span>
         </div>
-        <div className='menu-item-nav'>
-          <Link to="/gallery">Gallery</Link>
+        <div className='menu-hero-copy'>
+          <p className='eyebrow'>Offerings</p>
+          <h1>Couture cake tables for every celebration.</h1>
+          <p>
+            Layer flavors, textures, and colors to mirror your event story. We handcraft every petal and brushstroke,
+            sourcing organic dairy, fruit curds, and single-origin chocolates.
+          </p>
+          <ul>
+            <li>Complimentary tasting for wedding cakes over 100 servings</li>
+            <li>Custom palettes inspired by florals, stationery, or attire</li>
+            <li>Delivery across San Antonio & Hill Country</li>
+          </ul>
         </div>
-        <div className='menu-item-nav'>
-          <Link to="/contact">Order</Link>
-        </div>
-      </div>
+      </section>
 
-      <div className='carousel-conatiner'>
-        <div className="carousel-left-top">
-          <Carousel images={media}/>
-        </div>
-        <div className="carousel-right-bottom">
-          Celebrate with Amor de Miel!
-        </div>
-      </div>
-
-      <section className='menu-items'>
-        <h1>Menu</h1>
-        <h4>Cakes</h4>
-          <div className='food-item'>Tres Leches</div>
-          <div className='food-item'>Cafe & Tres Leches</div>
-          <div className='food-item'>Chocolate</div>
-          <div className='food-item'>Vanilla</div>
-          <div className='food-item'>Strawberry</div>
-          <div className='food-item'>Carrot Cake</div>
-          <div className='food-item'>Red velvet</div>
-          <div className='food-item'>Coconut Dream</div>
-          <div className='food-item'>Lemon</div>
-
-        <h4>Cake Fillings</h4>
-          <div className='food-item'>Strawberry mouse</div>
-          <div className='food-item'>Chocolate</div>
-          <div className='food-item'>Vanilla</div>
-          <div className='food-item'>Cream Cheese</div>
-          <div className='food-item'>Lemon curd</div>
-          <div className='food-item'>fruits vanilla(change later)</div>
-          <div className='food-item'>Roasted coconut & vanilla</div>
-          <div className='food-item'>strawberries and cream</div>
-
-        <h4>Cupcakes</h4>
-          <div className='food-item'>Strawberry</div>
-          <div className='food-item'>Red Velvet</div>
-          <div className='food-item'>Chocolate</div>
-          <div className='food-item'>Vanilla</div>
-          <div className='food-item'>Lemon</div>
-          <div className='food-item'>Oreo</div>
-          <div className='food-item'>Tres Leches</div>
-          <div className='food-item'>Cafe & Tres Leches</div>
-
-
-          <h4>Cookies</h4>
-            <div className='food-item'>Chocolate Chip</div>
-            <div className='food-item'>Snickerdoodle</div>
-            <div className='food-item'>Oatmeal Raisin</div>
-            <div className='food-item'>Sugar Cookie</div>
-
+      <section className='menu-grid'>
+        {menuSections.map((section) => (
+          <article key={section.title} className='menu-card'>
+            <div className='menu-card-header'>
+              <h2>{section.title}</h2>
+              <p>{section.description}</p>
+            </div>
+            <ul>
+              {section.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
       </section>
     </div>
   );
