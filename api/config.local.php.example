@@ -5,7 +5,7 @@ return [
         'host' => 'localhost',
         'name' => 'u933199044_Form_sub',
         'user' => 'u933199044_Amordemiel',
-        'pass' => 'YOUR_DB_PASSWORD',
+        'pass' => '',
     ],
     's3' => [
         'endpoint' => 'https://s3.us-east-005.backblazeb2.com',
