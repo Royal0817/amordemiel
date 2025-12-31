@@ -71,7 +71,7 @@ const CakeMenu = () => {
       <section className='menu-hero'>
         <div className='menu-hero-media'>
           <Carousel images={media} />
-          <span className='menu-hero-label'>Seasonal tastings available quarterly</span>
+          <span className='menu-hero-label'>Seasonal wedding tastings available</span>
         </div>
         <div className='menu-hero-copy'>
           <p className='eyebrow'>Offerings</p>

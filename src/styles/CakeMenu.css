@@ -9,31 +9,45 @@
 }
 
 .menu-hero {
-    max-width: 1200px;
-    margin: 0 auto 3rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    align-items: center;
-    gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: center;
+  gap: 2rem;
 }
 
 .menu-hero-media {
-    position: relative;
-    border-radius: 28px;
-    overflow: hidden;
-    box-shadow: 0 25px 60px rgba(47, 13, 0, 0.15);
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(47, 13, 0, 0.15);
+  display: flex;
+  flex-direction: column;
 }
 
 .menu-hero-label {
-    position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 0.5rem 1rem;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+  display: block;
+  margin-top: 1rem;
+  align-self: stretch;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 0.65rem 1rem;
+  border-radius: 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+
+.menu-hero-label::before {
+  content: '';
+  position: absolute;
+  top: -0.6rem;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: rgba(154, 96, 86, 0.25);
 }
 
 .menu-hero-copy h1 {
@@ -104,13 +118,18 @@
 }
 
 @media (max-width: 640px) {
-    #cake-menu {
-        padding: 4rem 1rem;
-    }
+  #cake-menu {
+    padding: 4rem 1rem;
+  }
 
-    .menu-grid {
-        grid-template-columns: 1fr;
-    }
+  .menu-hero-label {
+    margin-top: 0.75rem;
+    padding: 0.55rem 0.9rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
 
     .menu-card {
         padding: 1.25rem;

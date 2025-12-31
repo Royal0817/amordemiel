@@ -1,0 +1,29 @@
+<?php
+
+return [
+    'db' => [
+        'host' => 'localhost',
+        'name' => 'u933199044_Form_sub',
+        'user' => 'u933199044_Amordemiel',
+        'pass' => 'YOUR_DB_PASSWORD',
+    ],
+    's3' => [
+        'endpoint' => 'https://s3.us-east-005.backblazeb2.com',
+        'region' => 'us-east-005',
+        'bucket' => 'amordemiel',
+        'access_key' => 'YOUR_B2_KEY_ID',
+        'secret_key' => 'YOUR_B2_APP_KEY',
+        'path_style' => true,
+        'public_base' => '',
+        'object_lock' => true,
+        'retention_days' => '3650',
+    ],
+    'ntfy' => [
+        'server' => 'https://ntfy.sh',
+        'topic' => 'amordemiel-admin',
+        'token' => 'YOUR_NTFY_TOKEN',
+    ],
+    'admin' => [
+        'portal_url' => 'https://amordemiel.com/api/admin/',
+    ],
+];

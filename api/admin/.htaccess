@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Amor de Miel Admin"
+AuthUserFile /home/USERNAME/.htpasswd
+Require valid-user

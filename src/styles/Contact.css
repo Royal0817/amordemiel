@@ -255,6 +255,18 @@ textarea {
   align-self: flex-start;
 }
 
+.submit-status {
+  margin: 0.5rem 0 0;
+  color: var(--rose-deep);
+  font-weight: 600;
+}
+
+.submit-error {
+  margin: 0.5rem 0 0;
+  color: #b23a3a;
+  font-weight: 600;
+}
+
 @media (max-width: 900px) {
   .contact-hero {
     grid-template-columns: 1fr;

@@ -1,7 +1,6 @@
 import '../styles/Contact.css';
 import React, { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useSubmissions } from '../context/SubmissionsContext.jsx';
 
 const cakeOptions = [
   'Signature Tasting Sampler',
@@ -37,17 +36,49 @@ const guestRanges = ['Less than 30', '30 - 75', '75 - 125', '125 - 200', '200+']
 const dessertAddOns = ['Cupcakes', 'Dessert Shooters', 'Macarons', 'Sugar Cookies', 'Mini Cakes'];
 
 const Contact = () => {
-  const { addSubmission } = useSubmissions();
   const [activeForm, setActiveForm] = useState('desserts');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+  const [submitError, setSubmitError] = useState('');
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
-    const submission = Object.fromEntries(formData.entries());
+    setSubmitMessage('');
+    setSubmitError('');
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const submission = {};
+    for (const [key, value] of formData.entries()) {
+      if (submission[key]) {
+        submission[key] = Array.isArray(submission[key])
+          ? [...submission[key], value]
+          : [submission[key], value];
+      } else {
+        submission[key] = value;
+      }
+    }
     submission.addons = formData.getAll('addons');
-    addSubmission(submission);
-    event.target.reset();
-  }, [addSubmission]);
+    setIsSubmitting(true);
+    fetch('/api/submit.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(submission),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (!data || data.status !== 'ok') {
+          throw new Error(data?.message || 'Submission failed.');
+        }
+        setSubmitMessage('Thanks! Your inquiry has been received.');
+        form.reset();
+      })
+      .catch((error) => {
+        setSubmitError(error.message || 'Submission failed.');
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
+  }, []);
 
   return (
     <div className='contact-page'>
@@ -198,7 +229,11 @@ const Contact = () => {
               <textarea name='allergies' rows={3} placeholder='Let us know about any restrictions'></textarea>
             </label>
 
-            <button type='submit' className='cta-primary submit-btn'>Submit dessert inquiry</button>
+            <button type='submit' className='cta-primary submit-btn' disabled={isSubmitting}>
+              {isSubmitting ? 'Submitting...' : 'Submit dessert inquiry'}
+            </button>
+            {submitMessage && <p className='submit-status'>{submitMessage}</p>}
+            {submitError && <p className='submit-error'>{submitError}</p>}
           </form>
         </div>
         )}
@@ -285,7 +320,11 @@ const Contact = () => {
               <textarea name='allergies' rows={3} placeholder='Let us know about any restrictions'></textarea>
             </label>
 
-            <button type='submit' className='cta-primary submit-btn'>Submit cake inquiry</button>
+            <button type='submit' className='cta-primary submit-btn' disabled={isSubmitting}>
+              {isSubmitting ? 'Submitting...' : 'Submit cake inquiry'}
+            </button>
+            {submitMessage && <p className='submit-status'>{submitMessage}</p>}
+            {submitError && <p className='submit-error'>{submitError}</p>}
           </form>
         </div>
         )}
@@ -354,7 +393,11 @@ const Contact = () => {
               <textarea name='allergies' rows={3} placeholder='Let us know about any restrictions'></textarea>
             </label>
 
-            <button type='submit' className='cta-primary submit-btn'>Request tasting</button>
+            <button type='submit' className='cta-primary submit-btn' disabled={isSubmitting}>
+              {isSubmitting ? 'Submitting...' : 'Request tasting'}
+            </button>
+            {submitMessage && <p className='submit-status'>{submitMessage}</p>}
+            {submitError && <p className='submit-error'>{submitError}</p>}
           </form>
         </div>
         )}

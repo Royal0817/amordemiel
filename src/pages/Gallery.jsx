@@ -44,7 +44,7 @@ const Gallery = () => {
 
         <div className='hero-logo-card'>
           <img className='menu-logo' src={logo1} alt="Amor de Miel logo" />
-          <p>Buttercream atelier based in San Antonio, Texas.</p>
+          <p>Buttercream atelier based in Woodbridge, Virginia.</p>
         </div>
       </section>
 
