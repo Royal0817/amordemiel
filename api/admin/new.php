@@ -4,6 +4,8 @@ $config = require __DIR__ . '/../config.php';
 require __DIR__ . '/../db.php';
 require __DIR__ . '/utils.php';
 
+admin_require_login($config);
+
 $csrfToken = admin_csrf_token();
 $defaultPayload = [
     'inquiryType' => 'Desserts',

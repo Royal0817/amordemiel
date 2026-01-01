@@ -1,6 +1,7 @@
 <?php
 
-header('HTTP/1.1 401 Unauthorized');
-header('WWW-Authenticate: Basic realm="Amor de Miel Admin"');
-echo 'Logged out.';
+require __DIR__ . '/utils.php';
 
+admin_logout();
+header('Location: login.php', true, 302);
+exit;

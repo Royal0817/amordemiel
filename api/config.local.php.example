@@ -26,5 +26,8 @@ return [
     ],
     'admin' => [
         'portal_url' => 'https://amordemiel.com/api/admin/',
+        'login_url' => 'https://amordemiel.com/api/admin/login.php',
+        'username' => 'admin',
+        'password_hash' => 'CHANGE_ME',
     ],
 ];

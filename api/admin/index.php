@@ -4,6 +4,8 @@ $config = require __DIR__ . '/../config.php';
 require __DIR__ . '/../db.php';
 require __DIR__ . '/utils.php';
 
+admin_require_login($config);
+
 $pdo = get_db($config);
 $show = $_GET['show'] ?? '';
 $includeDeleted = $show === 'all' || $show === 'deleted';
