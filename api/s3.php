@@ -20,7 +20,9 @@ function s3_put_object(array $s3, string $key, string $body, string $contentType
     $host = $parsed['host'];
     $uri = $parsed['path'];
 
+    $contentMd5 = base64_encode(md5($body, true));
     $headers = [
+        'content-md5' => $contentMd5,
         'content-type' => $contentType,
         'host' => $host,
         'x-amz-content-sha256' => $payloadHash,
