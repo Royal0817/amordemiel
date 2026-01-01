@@ -97,6 +97,10 @@ const Contact = () => {
               <strong>2-3 months</strong>
               <span>Ideal booking window</span>
             </li>
+            <li>
+              <strong>Delivery</strong>
+              <span>Prices vary by distance</span>
+            </li>
           </ul>
         </div>
 

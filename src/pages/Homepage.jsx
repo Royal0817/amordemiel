@@ -10,7 +10,23 @@ const Homepage = () => {
   const heroImages = useMemo(() => {
     const valid = (galleryItems || []).filter((item) => item && item.src);
     const source = valid.length ? valid : gallerySeed;
-    return source.map((item) => ({ src: item.src, alt: item.alt }));
+    const preferred = source.find((item) =>
+      (item.id || '').toLowerCase().includes('img_9732') ||
+      (item.src || '').toString().includes('IMG_9732')
+    );
+    const remaining = source.filter((item) => item !== preferred);
+    const shuffled = remaining
+      .map((item) => ({ item, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ item }) => item);
+    const ordered = preferred ? [preferred, ...shuffled] : shuffled;
+    return ordered.map((item) => ({ src: item.src, alt: item.alt }));
+  }, [galleryItems]);
+
+  const instagramTiles = useMemo(() => {
+    const valid = (galleryItems || []).filter((item) => item && item.src);
+    const source = valid.length ? valid : gallerySeed;
+    return source.slice(0, 6);
   }, [galleryItems]);
 
   return (
@@ -70,6 +86,31 @@ const Homepage = () => {
           <Link className='cta-primary light' to='/contact'>
             Book a tasting
           </Link>
+        </div>
+      </section>
+
+      <section className="instagram-tease">
+        <div className="insta-copy">
+          <p className="section-eyebrow">Follow the atelier</p>
+          <h2 className="section-title">Behind the scenes at @_amordemiel</h2>
+          <p>Swipe through new buttercream sculptures, seasonal flavors, and studio moments.</p>
+          <a className="cta-secondary insta-link" href="https://www.instagram.com/_amordemiel/?hl=en" target="_blank" rel="noreferrer">
+            Visit Instagram
+          </a>
+        </div>
+        <div className="insta-grid">
+          {instagramTiles.map((item, index) => (
+            <a
+              key={item.id || index}
+              className={`insta-tile tile-${index % 3}`}
+              href="https://www.instagram.com/_amordemiel/?hl=en"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={item.src} alt={item.alt} loading="lazy" />
+              <span className="insta-overlay">Tap to explore</span>
+            </a>
+          ))}
         </div>
       </section>
 

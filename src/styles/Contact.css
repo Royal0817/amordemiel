@@ -284,7 +284,8 @@ textarea {
   }
 
   .contact-hero-card {
-    width: min(100%, 360px);
+    width: min(92%, 360px);
+    margin: 0 auto;
   }
 
   .contact-hero-actions {
@@ -308,6 +309,12 @@ textarea {
 
   .checkbox-grid {
     flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .checkbox-grid label {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .submit-btn {

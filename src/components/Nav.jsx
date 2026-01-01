@@ -105,12 +105,26 @@ const Nav = () => {
         aria-modal="true"
         aria-label="Mobile navigation"
       >
-        <div className='nav-menu'>
-          <NavLinks onClick={closeMenu} />
-          <div className='nav-item'>
-            <Link to="/contact" onClick={closeMenu} className='cta'>
-              Start Inquiry
-            </Link>
+        <div className='nav-panel'>
+          <div className='nav-mobile-header'>
+            <span className='nav-mobile-eyebrow'>Sweet navigation</span>
+            <h2>Find your next celebration</h2>
+            <a
+              className='nav-ig'
+              href='https://www.instagram.com/_amordemiel/?hl=en'
+              target='_blank'
+              rel='noreferrer'
+            >
+              @_amordemiel
+            </a>
+          </div>
+          <div className='nav-menu'>
+            <NavLinks onClick={closeMenu} />
+            <div className='nav-item'>
+              <Link to="/contact" onClick={closeMenu} className='cta'>
+                Start Inquiry
+              </Link>
+            </div>
           </div>
         </div>
       </div>
