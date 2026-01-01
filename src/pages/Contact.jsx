@@ -114,18 +114,18 @@ const Contact = () => {
           <button
             type='button'
             role='tab'
-            aria-selected={activeForm === 'desserts'}
-            className={`form-tab ${activeForm === 'desserts' ? 'active' : ''}`}
-            onClick={() => setActiveForm('desserts')}
+            aria-selected={activeForm === 'cakes'}
+            className={`form-tab ${activeForm === 'cakes' ? 'active' : ''}`}
+            onClick={() => setActiveForm('cakes')}
           >
             Cakes
           </button>
           <button
             type='button'
             role='tab'
-            aria-selected={activeForm === 'cakes'}
-            className={`form-tab ${activeForm === 'cakes' ? 'active' : ''}`}
-            onClick={() => setActiveForm('cakes')}
+            aria-selected={activeForm === 'desserts'}
+            className={`form-tab ${activeForm === 'desserts' ? 'active' : ''}`}
+            onClick={() => setActiveForm('desserts')}
           >
             Desserts
           </button>
@@ -142,8 +142,8 @@ const Contact = () => {
 
         {activeForm === 'desserts' && (
         <div className='form-card' role='tabpanel'>
-          <h2>Cake inquiry</h2>
-          <p className='form-subhead'>We’d love to learn more about the cake you have in mind.</p>
+          <h2>Dessert inquiry</h2>
+          <p className='form-subhead'>We’d love to learn more about the dessert assortment you have in mind.</p>
 
           <form onSubmit={handleSubmit} id='dessert-form'>
             <input type='hidden' name='inquiryType' value='Desserts' />
