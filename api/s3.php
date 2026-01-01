@@ -75,21 +75,25 @@ function s3_put_object(array $s3, string $key, string $body, string $contentType
     $curlHeaders[] = 'Expect:';
     $curlHeaders[] = 'Authorization: ' . $authorization;
 
+    $stream = fopen('php://temp', 'r+');
+    fwrite($stream, $body);
+    rewind($stream);
+
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
     curl_setopt($ch, CURLOPT_HTTPHEADER, $curlHeaders);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
+    curl_setopt($ch, CURLOPT_UPLOAD, true);
+    curl_setopt($ch, CURLOPT_INFILE, $stream);
+    curl_setopt($ch, CURLOPT_INFILESIZE, $contentLength);
     if (defined('CURL_HTTP_VERSION_1_1')) {
         curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
-    }
-    if (defined('CURLOPT_POSTFIELDSIZE')) {
-        curl_setopt($ch, CURLOPT_POSTFIELDSIZE, strlen($body));
     }
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $response = curl_exec($ch);
     $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     $error = curl_error($ch);
     curl_close($ch);
+    fclose($stream);
 
     if ($status < 200 || $status >= 300) {
         throw new RuntimeException('S3 upload failed: ' . ($error ?: $response));
