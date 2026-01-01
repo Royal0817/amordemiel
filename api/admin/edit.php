@@ -44,7 +44,10 @@ $payloadText = json_encode(json_decode($row['payload_json'], true), JSON_PRETTY_
     </style>
   </head>
   <body>
-    <h1>Edit submission</h1>
+    <div class="actions">
+      <h1>Edit submission</h1>
+      <a class="btn" href="logout.php">Log out</a>
+    </div>
     <p class="muted">ID: <?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?> · Created <?php echo htmlspecialchars($row['created_at'], ENT_QUOTES, 'UTF-8'); ?></p>
 
     <form method="post" action="update.php">
@@ -79,4 +82,3 @@ $payloadText = json_encode(json_decode($row['payload_json'], true), JSON_PRETTY_
     </form>
   </body>
 </html>
-

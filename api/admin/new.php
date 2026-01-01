@@ -31,7 +31,10 @@ $defaultPayload = [
     </style>
   </head>
   <body>
-    <h1>New submission</h1>
+    <div class="actions">
+      <h1>New submission</h1>
+      <a class="btn" href="logout.php">Log out</a>
+    </div>
     <p class="muted">Create a manual submission. This does not send notifications or snapshots.</p>
 
     <form method="post" action="create.php">
@@ -55,4 +58,3 @@ $defaultPayload = [
     </form>
   </body>
 </html>
-
