@@ -4,6 +4,7 @@ $config = require __DIR__ . '/../config.php';
 require __DIR__ . '/../db.php';
 require __DIR__ . '/utils.php';
 
+admin_require_login($config);
 admin_require_csrf($_POST['csrf_token'] ?? '');
 
 $payloadJson = $_POST['payload_json'] ?? '';
@@ -45,4 +46,3 @@ admin_log_event($pdo, $id, 'admin_created', [
 
 header('Location: edit.php?id=' . urlencode($id));
 exit;
-

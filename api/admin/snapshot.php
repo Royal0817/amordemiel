@@ -3,6 +3,9 @@
 $config = require __DIR__ . '/../config.php';
 require __DIR__ . '/../db.php';
 require __DIR__ . '/../s3.php';
+require __DIR__ . '/utils.php';
+
+admin_require_login($config);
 
 $id = $_GET['id'] ?? '';
 if (!$id) {

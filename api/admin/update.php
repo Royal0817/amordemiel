@@ -4,6 +4,7 @@ $config = require __DIR__ . '/../config.php';
 require __DIR__ . '/../db.php';
 require __DIR__ . '/utils.php';
 
+admin_require_login($config);
 admin_require_csrf($_POST['csrf_token'] ?? '');
 
 $id = $_POST['id'] ?? '';
@@ -70,4 +71,3 @@ admin_log_event($pdo, $id, 'admin_updated', $meta);
 
 header('Location: edit.php?id=' . urlencode($id));
 exit;
-

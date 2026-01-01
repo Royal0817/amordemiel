@@ -55,5 +55,8 @@ return [
     ],
     'admin' => [
         'portal_url' => $env('ADM_ADMIN_PORTAL_URL', ''),
+        'login_url' => $env('ADM_ADMIN_LOGIN_URL', '/api/admin/login.php'),
+        'username' => $env('ADM_ADMIN_USER', ''),
+        'password_hash' => $env('ADM_ADMIN_PASS_HASH', ''),
     ],
 ];
