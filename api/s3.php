@@ -14,6 +14,7 @@ function s3_put_object(array $s3, string $key, string $body, string $contentType
 {
     $url = s3_build_url($s3, $key);
     $payloadHash = hash('sha256', $body);
+    $contentLength = strlen($body);
     $amzDate = gmdate('Ymd\THis\Z');
     $dateStamp = gmdate('Ymd');
     $parsed = parse_url($url);
@@ -70,6 +71,7 @@ function s3_put_object(array $s3, string $key, string $body, string $contentType
     foreach ($headers as $keyName => $value) {
         $curlHeaders[] = $keyName . ': ' . $value;
     }
+    $curlHeaders[] = 'Content-Length: ' . $contentLength;
     $curlHeaders[] = 'Authorization: ' . $authorization;
 
     $ch = curl_init($url);
