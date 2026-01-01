@@ -283,6 +283,10 @@ textarea {
     padding-top: 4rem;
   }
 
+  .contact-hero-card {
+    width: min(100%, 360px);
+  }
+
   .contact-hero-actions {
     flex-direction: column;
     align-items: stretch;

@@ -6,6 +6,7 @@ $config = require __DIR__ . '/config.php';
 require __DIR__ . '/db.php';
 require __DIR__ . '/s3.php';
 require __DIR__ . '/snapshot-template.php';
+require __DIR__ . '/time.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -35,7 +36,7 @@ if (!filter_var($input['email'], FILTER_VALIDATE_EMAIL)) {
 }
 
 $id = bin2hex(random_bytes(16));
-$createdAt = gmdate('Y-m-d H:i:s');
+$createdAt = app_now();
 $formType = strtolower(preg_replace('/\s+/', '-', (string)$input['inquiryType']));
 
 $record = [

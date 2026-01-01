@@ -1,0 +1,90 @@
+.about-page {
+  min-height: 100vh;
+  padding: 6rem 1.5rem 5rem;
+  background: radial-gradient(circle at 15% 10%, rgba(244, 204, 196, 0.45), transparent 45%),
+              radial-gradient(circle at 85% 30%, rgba(240, 223, 208, 0.6), transparent 55%),
+              linear-gradient(180deg, #fbf4f1 0%, #f4e2db 55%, #f0d7d2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero {
+  width: min(1100px, 100%);
+  display: grid;
+  place-items: center;
+}
+
+.about-card {
+  width: min(820px, 100%);
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 32px;
+  padding: 3rem clamp(2rem, 4vw, 3.5rem);
+  box-shadow: 0 30px 70px rgba(70, 30, 25, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card::after {
+  content: '';
+  position: absolute;
+  inset: auto -20% -40% -20%;
+  height: 220px;
+  background: radial-gradient(circle, rgba(243, 206, 196, 0.5) 0%, rgba(243, 206, 196, 0) 70%);
+  pointer-events: none;
+}
+
+.about-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.75rem;
+  color: rgba(110, 62, 62, 0.75);
+  margin: 0 0 0.6rem;
+}
+
+.about-card h1 {
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  margin: 0;
+  color: #3b1f1f;
+}
+
+.about-intro {
+  font-size: 1.1rem;
+  margin: 0.8rem 0 1.8rem;
+  color: rgba(80, 40, 40, 0.75);
+}
+
+.about-body p {
+  margin: 0 0 1.2rem;
+  color: rgba(60, 28, 28, 0.85);
+  line-height: 1.7;
+}
+
+.about-signature {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.about-signature span {
+  border: 1px solid rgba(120, 70, 70, 0.3);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6c3b3b;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 720px) {
+  .about-page {
+    padding-top: 4.5rem;
+  }
+
+  .about-card {
+    padding: 2.2rem 1.6rem;
+  }
+}

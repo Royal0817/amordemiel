@@ -24,7 +24,7 @@ if (empty($decoded['name']) || empty($decoded['email']) || empty($decoded['phone
 }
 
 $id = bin2hex(random_bytes(16));
-$createdAt = gmdate('Y-m-d H:i:s');
+$createdAt = app_now();
 $formType = strtolower(preg_replace('/\s+/', '-', (string)$decoded['inquiryType']));
 
 $pdo = get_db($config);
