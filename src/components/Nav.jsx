@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/nav.css';
-import imgDesktop from '../images/logo.png';
+import imgDesktop from '../images/logo-cropped.png';
 import imgMobile from '../images/white-logo.png';
 
 const NAV_LINKS = [
@@ -139,6 +139,16 @@ const Nav = () => {
           <div className='nav-mobile-header'>
             <span className='nav-mobile-eyebrow'>Sweet navigation</span>
             <h2>Find your next celebration</h2>
+          </div>
+          <div className='nav-menu'>
+            <NavLinks onClick={closeMenu} />
+            <div className='nav-item'>
+              <Link to="/contact" onClick={closeMenu} className='cta nav-mobile-cta'>
+                Start Inquiry
+              </Link>
+            </div>
+          </div>
+          <div className="nav-mobile-footer">
             <a
               className='nav-ig'
               href='https://www.instagram.com/_amordemiel/?hl=en'
@@ -163,14 +173,6 @@ const Nav = () => {
               </span>
               <span className="sr-only">TikTok</span>
             </a>
-          </div>
-          <div className='nav-menu'>
-            <NavLinks onClick={closeMenu} />
-            <div className='nav-item'>
-              <Link to="/contact" onClick={closeMenu} className='cta'>
-                Start Inquiry
-              </Link>
-            </div>
           </div>
         </div>
       </div>
