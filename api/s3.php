@@ -72,12 +72,16 @@ function s3_put_object(array $s3, string $key, string $body, string $contentType
         $curlHeaders[] = $keyName . ': ' . $value;
     }
     $curlHeaders[] = 'Content-Length: ' . $contentLength;
+    $curlHeaders[] = 'Expect:';
     $curlHeaders[] = 'Authorization: ' . $authorization;
 
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
     curl_setopt($ch, CURLOPT_HTTPHEADER, $curlHeaders);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
+    if (defined('CURL_HTTP_VERSION_1_1')) {
+        curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+    }
     if (defined('CURLOPT_POSTFIELDSIZE')) {
         curl_setopt($ch, CURLOPT_POSTFIELDSIZE, strlen($body));
     }
