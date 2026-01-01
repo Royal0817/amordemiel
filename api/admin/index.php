@@ -45,7 +45,10 @@ $csrfToken = admin_csrf_token();
     </style>
   </head>
   <body>
-    <h1>Submission control panel</h1>
+    <div class="toolbar">
+      <h1>Submission control panel</h1>
+      <a class="btn" href="logout.php">Log out</a>
+    </div>
     <div class="toolbar">
       <a class="btn" href="new.php">New submission</a>
       <?php if ($includeDeleted): ?>
