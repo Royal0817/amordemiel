@@ -78,7 +78,9 @@ function s3_put_object(array $s3, string $key, string $body, string $contentType
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
     curl_setopt($ch, CURLOPT_HTTPHEADER, $curlHeaders);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
-    curl_setopt($ch, CURLOPT_POSTFIELDSIZE, $contentLength);
+    if (defined('CURLOPT_POSTFIELDSIZE')) {
+        curl_setopt($ch, CURLOPT_POSTFIELDSIZE, $contentLength);
+    }
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $response = curl_exec($ch);
     $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
