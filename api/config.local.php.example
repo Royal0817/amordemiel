@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'debug' => false,
     'db' => [
         'host' => 'localhost',
         'name' => 'u933199044_Form_sub',

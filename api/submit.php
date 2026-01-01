@@ -105,6 +105,11 @@ try {
 
     echo json_encode(['status' => 'ok', 'id' => $id]);
 } catch (Throwable $error) {
+    error_log('submit.php error: ' . $error->getMessage());
     http_response_code(500);
-    echo json_encode(['status' => 'error', 'message' => 'Submission failed.']);
+    $message = 'Submission failed.';
+    if (!empty($config['debug'])) {
+        $message = $error->getMessage();
+    }
+    echo json_encode(['status' => 'error', 'message' => $message]);
 }

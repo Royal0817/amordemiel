@@ -30,6 +30,7 @@ $require = function (string $key): string {
 };
 
 return [
+    'debug' => $envBool('ADM_DEBUG', false),
     'db' => [
         'host' => $env('ADM_DB_HOST', 'localhost'),
         'name' => $require('ADM_DB_NAME'),
