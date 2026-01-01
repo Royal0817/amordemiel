@@ -13,7 +13,20 @@ if (!$id) {
     exit;
 }
 
+$hardDelete = !empty($_POST['hard_delete']);
+
 $pdo = get_db($config);
+if ($hardDelete) {
+    $events = $pdo->prepare('DELETE FROM submission_events WHERE submission_id = :id');
+    $events->execute([':id' => $id]);
+
+    $stmt = $pdo->prepare('DELETE FROM submissions WHERE id = :id');
+    $stmt->execute([':id' => $id]);
+
+    header('Location: index.php?show=all');
+    exit;
+}
+
 $stmt = $pdo->prepare('UPDATE submissions SET deleted_at = :deleted_at, status = :status WHERE id = :id');
 $stmt->execute([
     ':deleted_at' => gmdate('Y-m-d H:i:s'),
@@ -25,4 +38,3 @@ admin_log_event($pdo, $id, 'admin_archived');
 
 header('Location: index.php?show=all');
 exit;
-
