@@ -21,10 +21,8 @@ function s3_put_object(array $s3, string $key, string $body, string $contentType
     $uri = $parsed['path'];
 
     $contentMd5 = base64_encode(md5($body, true));
-    $contentLength = strlen($body);
     $headers = [
         'content-md5' => $contentMd5,
-        'content-length' => (string)$contentLength,
         'content-type' => $contentType,
         'host' => $host,
         'x-amz-content-sha256' => $payloadHash,
@@ -79,7 +77,7 @@ function s3_put_object(array $s3, string $key, string $body, string $contentType
     curl_setopt($ch, CURLOPT_HTTPHEADER, $curlHeaders);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
     if (defined('CURLOPT_POSTFIELDSIZE')) {
-        curl_setopt($ch, CURLOPT_POSTFIELDSIZE, $contentLength);
+        curl_setopt($ch, CURLOPT_POSTFIELDSIZE, strlen($body));
     }
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $response = curl_exec($ch);
