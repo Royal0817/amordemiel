@@ -8,7 +8,10 @@ CREATE TABLE submissions (
   snapshot_checksum CHAR(64) NULL,
   snapshot_status VARCHAR(16) NOT NULL DEFAULT 'pending',
   notification_status VARCHAR(16) NOT NULL DEFAULT 'pending',
-  notification_response TEXT NULL
+  notification_response TEXT NULL,
+  status VARCHAR(16) NOT NULL DEFAULT 'open',
+  admin_notes TEXT NULL,
+  deleted_at DATETIME NULL
 );
 
 CREATE TABLE submission_events (
