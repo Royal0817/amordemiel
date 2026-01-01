@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/nav.css';
 import imgDesktop from '../images/logo-cropped.png';
-import imgMobile from '../images/white-logo.png';
+import imgMobile from '../images/logo-cropped.png';
 
 const NAV_LINKS = [
   { to: '/homepage', label: 'Home' },
