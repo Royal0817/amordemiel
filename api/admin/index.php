@@ -102,6 +102,12 @@ $csrfToken = admin_csrf_token();
                   <input type="hidden" name="id" value="<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>">
                   <button class="btn btn-danger" type="submit">Archive</button>
                 </form>
+                <form method="post" action="delete.php" onsubmit="return confirm('Permanently delete this submission? This cannot be undone.');">
+                  <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrfToken, ENT_QUOTES, 'UTF-8'); ?>">
+                  <input type="hidden" name="id" value="<?php echo htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); ?>">
+                  <input type="hidden" name="hard_delete" value="1">
+                  <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
               <?php else: ?>
                 <form method="post" action="update.php">
                   <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrfToken, ENT_QUOTES, 'UTF-8'); ?>">
