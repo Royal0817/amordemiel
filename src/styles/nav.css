@@ -229,6 +229,21 @@
   gap: 0.5rem;
 }
 
+.nav-mobile-header {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.nav-mobile-header .nav-ig {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(214, 160, 160, 0.35);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 12px 24px rgba(120, 65, 65, 0.16);
+}
+
 .nav-panel {
   position: relative;
   z-index: 1;

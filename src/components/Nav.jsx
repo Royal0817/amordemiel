@@ -59,6 +59,12 @@ const Nav = () => {
     </svg>
   );
 
+  const TikTokIcon = () => (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M15.5 3a6.2 6.2 0 0 0 3.7 2.1v3.1a9.3 9.3 0 0 1-3.7-1.3v6.4a5.9 5.9 0 1 1-5.9-5.9c.3 0 .7 0 1 .1v3.2a2.7 2.7 0 1 0 2.1 2.6V3h2.8z" />
+    </svg>
+  );
+
   const NavLinks = ({ onClick }) => (
     <>
       {NAV_LINKS.map((link) => (
@@ -95,6 +101,15 @@ const Nav = () => {
           >
             <InstagramIcon />
           </a>
+          <a
+            className="nav-ig-link"
+            href="https://www.tiktok.com/@amordemiel?_r=1&_t=ZT-92iEQAz1OS7"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Visit Amor de Miel on TikTok"
+          >
+            <TikTokIcon />
+          </a>
           <Link className="cta" to="/contact">
             Start Inquiry
           </Link>
@@ -129,11 +144,24 @@ const Nav = () => {
               href='https://www.instagram.com/_amordemiel/?hl=en'
               target='_blank'
               rel='noreferrer'
+              aria-label='Visit Amor de Miel on Instagram'
             >
               <span className="nav-ig-icon">
                 <InstagramIcon />
               </span>
-              <span className="sr-only">Instagram @_amordemiel</span>
+              <span className="sr-only">Instagram</span>
+            </a>
+            <a
+              className='nav-ig'
+              href='https://www.tiktok.com/@amordemiel?_r=1&_t=ZT-92iEQAz1OS7'
+              target='_blank'
+              rel='noreferrer'
+              aria-label='Visit Amor de Miel on TikTok'
+            >
+              <span className="nav-ig-icon">
+                <TikTokIcon />
+              </span>
+              <span className="sr-only">TikTok</span>
             </a>
           </div>
           <div className='nav-menu'>
