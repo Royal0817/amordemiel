@@ -114,9 +114,6 @@ const Homepage = () => {
         </div>
       </section>
 
-      <footer className="footer">
-        <p>&copy; 2025 Amor de Miel. All rights reserved.</p>
-      </footer>
     </div>
   );
 };

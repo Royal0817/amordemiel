@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import HomePage from './pages/Homepage.jsx';
 import Admin from './pages/Admin.jsx';
 import Nav from './components/Nav.jsx';
+import Footer from './components/Footer.jsx';
 import { SubmissionsProvider } from './context/SubmissionsContext.jsx';
 import { GalleryProvider } from './context/GalleryContext.jsx';
 import './styles/App.css';
@@ -19,6 +20,7 @@ function Layout() {
       <main>
         <Outlet />
       </main>
+      <Footer />
     </>
   );
 }
