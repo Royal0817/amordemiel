@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../time.php';
+
 function admin_start_session(): void
 {
     if (session_status() === PHP_SESSION_NONE) {
@@ -80,6 +82,6 @@ function admin_log_event(PDO $pdo, string $submissionId, string $eventType, arra
         ':submission_id' => $submissionId,
         ':event_type' => $eventType,
         ':event_meta' => $meta ? json_encode($meta, JSON_UNESCAPED_UNICODE) : null,
-        ':created_at' => gmdate('Y-m-d H:i:s'),
+        ':created_at' => app_now(),
     ]);
 }

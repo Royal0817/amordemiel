@@ -30,7 +30,7 @@ if ($hardDelete) {
 
 $stmt = $pdo->prepare('UPDATE submissions SET deleted_at = :deleted_at, status = :status WHERE id = :id');
 $stmt->execute([
-    ':deleted_at' => gmdate('Y-m-d H:i:s'),
+    ':deleted_at' => app_now(),
     ':status' => 'deleted',
     ':id' => $id,
 ]);
