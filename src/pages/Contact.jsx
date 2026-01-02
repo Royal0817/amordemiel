@@ -40,6 +40,9 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
   const [submitError, setSubmitError] = useState('');
+  const todayString = new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+    .toISOString()
+    .split('T')[0];
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault();
@@ -178,7 +181,7 @@ const Contact = () => {
             <div className='form-grid three-col'>
               <label>
                 Event date
-                <input type='date' name='eventDate' required />
+                <input type='date' name='eventDate' required min={todayString} />
               </label>
               <label>
                 Guest count
@@ -276,7 +279,7 @@ const Contact = () => {
             <div className='form-grid three-col'>
               <label>
                 Event date
-                <input type='date' name='eventDate' required />
+                <input type='date' name='eventDate' required min={todayString} />
               </label>
               <label>
                 Guest count
@@ -356,7 +359,7 @@ const Contact = () => {
               </label>
               <label>
                 Event date
-                <input type='date' name='eventDate' required />
+                <input type='date' name='eventDate' required min={todayString} />
               </label>
             </div>
 
@@ -379,7 +382,7 @@ const Contact = () => {
             <div className='form-grid two-col'>
               <label>
                 Preferred tasting date
-                <input type='date' name='tastingDate' />
+                <input type='date' name='tastingDate' min={todayString} />
               </label>
               <label>
                 Preferred time
